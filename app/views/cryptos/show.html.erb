@@ -1,29 +1,35 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Abbreviation:</strong>
+<ul class="list-group list-group-flush text-center">
+<li class="list-group-item">
+  <strong>Devise:</strong>
   <%= @crypto.abbreviation %>
-</p>
-
-<p>
-  <strong>Name:</strong>
+</li>
+<br>
+<li class="list-group-item">
+  <strong>Nom:</strong>
   <%= @crypto.name %>
-</p>
-
-<p>
-  <strong>Quantity:</strong>
+</li>
+<br>
+<li class="list-group-item">
+  <strong>Quantitée:</strong>
   <%= @crypto.quantity %>
-</p>
-
-<p>
+</li>
+<br>
+<li class="list-group-item">
   <strong>Date:</strong>
   <%= @crypto.date %>
-</p>
-
-<p>
-  <strong>Value:</strong>
+</li>
+<br>
+<li class="list-group-item">
+  <strong>Valeur:</strong>
   <%= @crypto.value %>
-</p>
+</li>
+<br>
+<li class="list-group-item">
+  <strong>Coût:</strong>
+  <%= @crypto.cost %>
+</li>
+</ul>
 
-<%= link_to 'Edit', edit_crypto_path(@crypto) %> |
-<%= link_to 'Back', cryptos_path %>
+<br>
+<%= link_to 'Edit', edit_crypto_path(@crypto), class:"btn btn-warning" %>
+<%= link_to 'Back', cryptos_path, class:"btn btn-warning" %>

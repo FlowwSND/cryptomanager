@@ -1,20 +1,18 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Cryptos</h1>
-
-<table>
+<table class="table table-striped table-dark">
   <thead>
     <tr>
-      <th>Abbreviation</th>
-      <th>Name</th>
-      <th>Quantity</th>
+      <th>Devise</th>
+      <th>Nom</th>
+      <th>Quantité</th>
       <th>Date</th>
-      <th>Value</th>
+      <th>Valeur</th>
+      <th>Coût</th>
       <th colspan="3"></th>
     </tr>
   </thead>
-
   <tbody>
+<h1 class="text-center text-light bg-dark">Mes Crypto-monnaies</h1>
+  <br>
     <% @cryptos.each do |crypto| %>
       <tr>
         <td><%= crypto.abbreviation %></td>
@@ -22,14 +20,17 @@
         <td><%= crypto.quantity %></td>
         <td><%= crypto.date %></td>
         <td><%= crypto.value %></td>
-        <td><%= link_to 'Show', crypto %></td>
-        <td><%= link_to 'Edit', edit_crypto_path(crypto) %></td>
-        <td><%= link_to 'Destroy', crypto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= crypto.cost %></td>
+        <td><%= link_to 'Éditer', edit_crypto_path(crypto), class:"btn btn-warning" %></td>
+        <td><%= link_to 'Supprimer', crypto, method: :delete, data: { confirm: 'Êtes-vous sûr de vouloir supprimer cette crypto ?' }, class:"btn btn-warning" %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+<br>
+<div class="position-relative text-center">
+<%= link_to 'Ajouter une crypto-monnaie', new_crypto_path, class:"btn btn-warning" %>
+</div>
 
 <br>
 
-<%= link_to 'New Crypto', new_crypto_path %>

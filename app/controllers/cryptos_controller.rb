@@ -64,6 +64,6 @@ class CryptosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def crypto_params
-      params.require(:crypto).permit(:abbreviation, :name, :quantity, :date, :value)
+      params.require(:crypto).permit(:abbreviation, :name, :quantity, :date, :value, :cost)
     end
 end
