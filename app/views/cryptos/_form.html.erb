@@ -3,14 +3,15 @@
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
     
-    <%= f.input :name %>
-    <%= f.input :quantity %>
-    <%= f.input :date %>
-    <%= f.input :value %>
-    <%= f.input :cost %>
+    <%= f.input :name, :label => "Nom" %>
+    <%= f.input :quantity, :label => "Quantité" %>
+    <%= f.input :date, :label => "Date" %>
+    <%= f.input :value, :label => "Valeur unitaire" %>
+    <%= f.input :cost, :label => "Coût" %>
 <br>
      <div class="form-actions btn btn-warning">
-    <%= f.button :submit %>
+
+    <%= f.button :submit, "Valider" %>
     </div>
     
   </div>
